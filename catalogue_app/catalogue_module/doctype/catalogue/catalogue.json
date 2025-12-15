@@ -1,0 +1,128 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:title",
+ "creation": "2025-12-14 19:22:29.752477",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "is_active",
+  "is_website_visible",
+  "level",
+  "univers_items",
+  "univers_list_html",
+  "lft",
+  "rgt",
+  "is_group",
+  "old_parent",
+  "parent_catalogue"
+ ],
+ "fields": [
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group",
+   "read_only": 1
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "label": "Old Parent",
+   "options": "Catalogue"
+  },
+  {
+   "fieldname": "parent_catalogue",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Parent Catalogue",
+   "options": "Catalogue"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Titre",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Actif"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_website_visible",
+   "fieldtype": "Check",
+   "label": "Visible sur le site"
+  },
+  {
+   "fieldname": "level",
+   "fieldtype": "Select",
+   "label": "Niveau",
+   "options": "Catalogue\nUnivers"
+  },
+  {
+   "depends_on": "eval:doc.level === 'Catalogue';",
+   "fieldname": "univers_list_html",
+   "fieldtype": "HTML",
+   "label": "Univers du catalogue"
+  },
+  {
+   "depends_on": "eval:doc.level == 'Univers';",
+   "fieldname": "univers_items",
+   "fieldtype": "Table",
+   "label": "Articles",
+   "options": "Univers Items"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_tree": 1,
+ "links": [],
+ "modified": "2025-12-15 12:31:25.399817",
+ "modified_by": "Administrator",
+ "module": "Catalogue Module",
+ "name": "Catalogue",
+ "naming_rule": "By fieldname",
+ "nsm_parent_field": "parent_catalogue",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
