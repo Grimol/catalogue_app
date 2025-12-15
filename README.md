@@ -1,6 +1,6 @@
 ### Catalogue App
 
-Catalogue App - Artyfêtes Test
+Catalogue App - Arty Test
 
 ### Installation
 
