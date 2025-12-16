@@ -137,13 +137,11 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"Item": {
+		"on_update": "catalogue_app.catalogue_module.catalogue_hooks.item_on_update",
+	}
+}
 
 # Scheduled Tasks
 # ---------------
